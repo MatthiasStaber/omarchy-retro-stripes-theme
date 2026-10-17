@@ -1,0 +1,36 @@
+mode = "dark"
+
+# Retro Stripes: six stripes on near-black. Brick, tomato, amber, teal, bronze, khaki
+# come from the reference design. Green, blue and magenta are derived from them.
+accent = "#E85237"
+selection = "#3a2a1c"
+muted = "#7d7258"
+
+background = "#111110"
+dark_background = "#0c0c0b"
+darker_background = "#080808"
+lighter_background = "#1d1c19"
+
+foreground = "#e8dec6"
+dark_foreground = "#7d7258"
+light_foreground = "#cfc5ad"
+bright_foreground = "#f6eddb"
+
+hyprland_active_border = "rgba(e85237ee) rgba(d18f3fee) 45deg"
+hyprland_inactive_border = "rgba(3a352baa)"
+
+red = "#da4e44"
+yellow = "#b1a055"
+orange = "#d18f3f"
+green = "#718a70"
+cyan = "#47888f"
+blue = "#468798"
+magenta = "#b8655a"
+brown = "#99793f"
+
+bright_red = "#f36559"
+bright_yellow = "#cab96e"
+bright_green = "#89a288"
+bright_cyan = "#60a0a8"
+bright_blue = "#5f9fb1"
+bright_magenta = "#d37d71"
