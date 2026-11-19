@@ -37,7 +37,7 @@ derived from the stripes; every ANSI colour has at least 4.5:1 contrast on the b
 All 3840×2160. Cycle through them with Super+Ctrl+Space, or pick one in the background menu.
 
 Each wallpaper has a short intro in `backgrounds/intros/`: the stripes swipe in along their
-path (the logo builds up pixel by pixel). Omarchy plays it at login and when you switch to
+path (the logo burns in like the wordmark lock screen). Omarchy plays it at login and when you switch to
 the theme. Turn intros off with `omarchy theme bg intro disable`.
 
 ## Lock screen (optional)
