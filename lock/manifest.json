@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "retro-stripes.lock",
+  "name": "Retro Stripes Lock",
+  "version": "1.0.0",
+  "author": "MatthiasStaber",
+  "description": "Omarchy's lock screen with the OMARCHY wordmark burning in on lock and away on unlock (Retro Stripes theme only).",
+  "omarchy": {
+    "capabilities": [
+      "authentication"
+    ],
+    "clonedFrom": "omarchy.lock"
+  },
+  "kinds": [
+    "service"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "Service.qml"
+  }
+}
