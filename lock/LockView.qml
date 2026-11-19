@@ -236,11 +236,10 @@ Item {
     onTriggered: root.updateClock()
   }
 
-  // Lock: the wallpaper settles in as the blur comes up, the wordmark burns in
+  // Lock: the blur comes up over the wallpaper (no zoom: it jumped), the wordmark burns in
   // from the bottom row up, then clock and field rise in.
   ParallelAnimation {
     id: introAnim
-    NumberAnimation { target: root; property: "backdropScale"; from: 1.06; to: 1; duration: 900; easing.type: Easing.OutCubic }
     NumberAnimation { target: root; property: "blurAmount"; from: 0; to: 1; duration: 800; easing.type: Easing.OutCubic }
     NumberAnimation { target: root; property: "veilOpacity"; from: 0; to: 1; duration: 800; easing.type: Easing.OutCubic }
     PropertyAction { target: root; property: "burnOut"; value: 0 }
@@ -380,7 +379,8 @@ Item {
         // One square per wordmark pixel. Each square works out its own share of
         // the burn timeline (kIn, kOut); colour, position and fade are bound to
         // those, so only squares that are mid-burn get recomputed per frame.
-        //   Burn in: rows light from the bottom up (with some scatter), each
+        //   Burn in: from the bottom up, spreading through connected squares (start
+        //   time per square in Wordmark.js, never one floating on black), each
         //   square running brick > tomato > amber > khaki > white-hot > its colour.
         //   Burn away: rows catch fire from the top down, run through amber >
         //   khaki > white-hot > ash and rise, shrink and fade like smoke.
@@ -393,13 +393,13 @@ Item {
             readonly property int row: modelData[1]
             readonly property color base: root.stripes[modelData[2]]
             readonly property real jitter: modelData[3]
-            readonly property real kIn: root.clamp01((root.burnIn - ((Wordmark.rows - 1 - row) / Wordmark.rows * 0.7 + jitter * 0.12)) / 0.18)
+            readonly property real kIn: root.clamp01((root.burnIn - modelData[4]) / 0.18)
             readonly property real kOut: root.clamp01((root.burnOut - (row / Wordmark.rows * 0.53 + jitter * 0.12)) / 0.35)
 
             visible: kIn > 0 && kOut < 1
             antialiasing: false
             x: col * root.cell
-            y: (row - (1 - kIn) * 0.4 - kOut * kOut * kOut * 6) * root.cell
+            y: (row - kOut * kOut * kOut * 6) * root.cell
             // A hair of overlap hides seams between neighbours.
             width: root.cell + 0.5 / root.dpr
             height: root.cell + 0.5 / root.dpr
