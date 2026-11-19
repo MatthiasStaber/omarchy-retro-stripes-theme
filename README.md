@@ -40,6 +40,8 @@ Each wallpaper has a short intro in `backgrounds/intros/`: the stripes swipe in 
 path (the logo burns in like the wordmark lock screen). Omarchy plays it at login and when you switch to
 the theme. Turn intros off with `omarchy theme bg intro disable`.
 
+![The five intros](media/intros.gif)
+
 ## Lock screen (optional)
 
 `lock/` holds a lock screen to match: the OMARCHY wordmark from the logo wallpaper burns in
@@ -47,6 +49,8 @@ from the bottom when the screen locks and burns away as smoke when you unlock. T
 under it, and the password shows as squares in the six stripe colours. It is Omarchy's own lock
 (same password and fingerprint handling) with a new look, and it only changes anything while
 Retro Stripes is the active theme.
+
+![Wordmark lock: burn in, typing, burn away](media/lock.gif)
 
 It is a shell plugin, so it is not installed with the theme. After installing the theme:
 
